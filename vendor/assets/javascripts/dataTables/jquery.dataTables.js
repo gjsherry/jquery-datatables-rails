@@ -2075,8 +2075,11 @@
 
 			var sSearchStr = oSettings.oLanguage.sSearch;
 			sSearchStr = (sSearchStr.indexOf('_INPUT_') !== -1) ?
-			  sSearchStr.replace('_INPUT_', '<input type="text" />') :
-			  sSearchStr==="" ? '<input type="text" />' : sSearchStr+' <input type="text" />';
+			  //sSearchStr.replace('_INPUT_', '<input type="text" />') :
+			  //sSearchStr==="" ? '<input type="text" />' : sSearchStr+' <input type="text" />';
+				sSearchStr.replace('_INPUT_', '<span class="clearable"><input type="text" name="data_field" value="" /><span class="icon_clear"><i class="icon-remove-sign"></span></span>') :
+				sSearchStr==="" ? '<span class="clearable"><input type="text" name="data_field" value="" /><span class="icon_clear"><i class="icon-remove-sign"></i></span></span>' : sSearchStr+' <span class="clearable"><input type="text" name="data_field" value="" /><span class="icon_clear"><i class="icon-remove-sign"></i></span></span>';
+
 
 			var nFilter = document.createElement( 'div' );
 			nFilter.className = oSettings.oClasses.sFilter;
